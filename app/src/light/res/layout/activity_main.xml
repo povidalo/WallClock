@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:background="#000"
+    tools:context=".activity.MainActivity">
+
+    <fragment
+        android:id="@+id/slide_show"
+        android:name="ru.povidalo.dashboard.fragment.SlideShowFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        tools:layout="@layout/slide_show_fragment" />
+
+    <!-- <fragment
+        android:id="@+id/endless_video"
+        android:name="ru.povidalo.dashboard.fragment.EndlessVideoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        tools:layout="@layout/video_fragment" /> -->
+
+    <RelativeLayout
+        android:id="@+id/instruments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true">
+
+        <fragment
+            android:id="@+id/clock"
+            android:name="ru.povidalo.dashboard.fragment.ClockFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            tools:layout="@layout/clock" />
+
+        <ImageView
+            android:id="@+id/system_settings_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@id/clock"
+            android:layout_alignParentLeft="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/settings_icon"
+            android:background="@drawable/clickable_bg" />
+
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/timer"
+        android:name="ru.povidalo.dashboard.fragment.TimerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:visibility="gone"
+        tools:layout="@layout/timer_widget" />
+
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="db_name" translatable="false">files_DB</string>
+
+    <!-- <string name="default_user_agent" translatable="false">Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36</string> -->
+    <string name="default_user_agent" translatable="false">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:59.0) Gecko/20100101 Firefox/59.0</string>
+
+    <color name="calendar_bg">#44585858</color>
+    <color name="calendar_header">#44ffffff</color>
+
+    <color name="timer_default_bg">#dd000000</color>
+    <color name="timer_alert_flicker_bg">#fff</color>
+</resources>

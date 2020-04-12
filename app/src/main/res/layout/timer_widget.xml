@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/timer_default_bg">
+
+    <ImageView
+        android:id="@+id/close_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerInside"
+        android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <TextView
+        android:id="@+id/timer_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/picker"
+        android:layout_alignRight="@+id/picker"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/timer_label"
+        android:textColor="#fff"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:id="@+id/picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timer_label"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <NumberPicker
+            android:id="@+id/h_picker"
+            android:theme="@style/AppTheme.NumberPicker"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content" />
+        <NumberPicker
+            android:id="@+id/m_picker"
+            android:theme="@style/AppTheme.NumberPicker"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content" />
+        <NumberPicker
+            android:id="@+id/s_picker"
+            android:theme="@style/AppTheme.NumberPicker"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/picker_cap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/picker"
+        android:layout_alignLeft="@+id/picker"
+        android:layout_alignRight="@+id/picker"
+        android:weightSum="3"
+        android:paddingTop="0dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/timer_h"
+            android:textColor="#cccccc"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/timer_m"
+            android:textColor="#cccccc"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/timer_s"
+            android:textColor="#cccccc"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/picker_btns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/picker_cap"
+        android:layout_alignLeft="@+id/picker"
+        android:layout_alignRight="@+id/picker"
+        android:weightSum="2"
+        android:paddingTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/timer_clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:padding="8dp"
+            android:gravity="center"
+            android:text="@string/clear"
+            android:textColor="@color/timer_btn_text"
+            android:textSize="18sp"
+            android:background="@drawable/timer_btn_bg" />
+
+        <TextView
+            android:id="@+id/timer_toggle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:padding="8dp"
+            android:gravity="center"
+            android:text="@string/start"
+            android:textColor="@color/timer_btn_text"
+            android:textSize="18sp"
+            android:background="@drawable/timer_btn_bg" />
+
+    </LinearLayout>
+
+    <com.applandeo.materialcalendarview.CalendarView
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/picker"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="60dp"
+        app:headerLabelColor="#fff"
+        app:abbreviationsLabelsColor="#bbb"
+        app:daysLabelsColor="#fff"
+        app:todayLabelColor="#9592ff"
+        app:anotherMonthsDaysLabelsColor="#555"/>
+
+</RelativeLayout>

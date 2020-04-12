@@ -1,0 +1,42 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ru.povidalo.dashboard.watchdog">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+
+    <permission
+        android:name="ru.povidalo.dashboard.watchdog"
+        android:label="@string/app_name"
+        android:description="@string/app_name"
+        android:protectionLevel="normal" />
+
+    <application
+        tools:replace="android:allowBackup"
+        android:allowBackup="false"
+        android:icon="@drawable/watchdog"
+        android:label="@string/app_name">
+
+        <service
+            android:name="ru.povidalo.dashboard.watchdog.service.WatchDogService"
+            android:permission="ru.povidalo.dashboard.watchdog"
+            android:process="ru.povidalo.dashboard.WatchDogService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name="ru.povidalo.dashboard.watchdog.service.WatchDogServiceReceiver"
+            android:permission="ru.povidalo.dashboard.watchdog"
+            android:process="ru.povidalo.dashboard.WatchDogService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="ru.povidalo.dashboard.watchdog" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>
